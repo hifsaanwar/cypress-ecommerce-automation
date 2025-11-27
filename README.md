@@ -43,6 +43,7 @@ README.md
 3. Mocha + Chai
 4. Page Object Model (POM) for reusability
 5. VS Code with IntelliSense support
+6. Github Actions Integrated
 
 Why this project?
 
