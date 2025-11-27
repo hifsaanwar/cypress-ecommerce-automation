@@ -3,8 +3,10 @@
 import { LoginPage } from "../fixtures/Page Objects/HomePage";
 import { InventoryPage } from "../fixtures/Page Objects/InventoryPage";
 import { SideMenu } from "../fixtures/Page Objects/SideMenu";
-
-const UrlData = require("../../fixtures/Saucedemo.json");
+// cy.fixture("Page Objects/InventoryPage.js");
+// cy.fixture("Page Objects/SideMenu.js");
+// cy.fixture("Page Objects/HomePage.js");
+//const UrlData = require("../../fixtures/Saucedemo.json");
 
 describe("Login Tests", () => {
   const login = new LoginPage();
@@ -12,7 +14,9 @@ describe("Login Tests", () => {
   const menu = new SideMenu();
 
   beforeEach(() => {
-    cy.visit(UrlData.url);
+    cy.fixture("UrlData.json").then((UrlData) => {
+      cy.visit(UrlData.url);
+    });
   });
 
   it("Invalid login", () => {
